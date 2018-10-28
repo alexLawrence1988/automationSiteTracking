@@ -5,6 +5,8 @@ const capture = require('./routes/capture.js');
 const env = 'live';
 const config = require('./config/config.' + env + '.js');
 
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use('/tracking', capture);
 
 app.listen(config.port, function(){
