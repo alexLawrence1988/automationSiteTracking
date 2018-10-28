@@ -1,28 +1,26 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+mongoose.set('useFindAndModify', false);
 
 // create a schema
 var visitSchema = new Schema({
   clientId: Number,
-  visitId: Number,
-  startDateTime: { type: Date, required: true, unique: true },
-  endDateTime: { type: Date, required: true },
-  pages: Object,  
+  startDateTime: { type: Number, required: true}, // lets store these as epochs
+  endDateTime: { type: Number, required: true }, // lets store these as epoch
+  pages: Array,  
   ipAddress: String,
   device: {
-    screen: {
-        w: Number,
-        h: Number
-    },
+    screen: String,
     browser: String,
     agent: String,
     os: String,
     language: String
   },
   domain: String,
-  created_at: Date,
-  updated_at: Date,
+  created_at: Number, // lets store these as epochs
+  updated_at: Number, // lets store these as epochs
   guid: String,
+  fingerprint: String,
   captureType: String
 });
 
