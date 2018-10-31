@@ -16,5 +16,3 @@ Simply reference the tracking code in ./trackingCodes/trackingScript.v1.00.js on
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
-
-* Stealing code and presenting it as your own is a douchebag move
